@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class ControlFlowExercises {
     public static void main(String[] args) {
 
@@ -41,30 +43,94 @@ public class ControlFlowExercises {
 
 
 //        Refactor the previous two exercises to use a for loop instead.
-        for (int i = 5; i < 15; ++i) {
-            System.out.printf("%d\n", i);
-        }
-
-        for (int i = 0; i < 101; i += 2) {
-            System.out.printf("\t%d\n", i);
-        }
-
-
-
-
-
-
-
-
-
-
+//        for (int i = 5; i < 15; ++i) {
+//            System.out.printf("%d\n", i);
+//        }
+//
+//        for (int i = 0; i < 101; i += 2) {
+//            System.out.printf("\t%d\n", i);
+//        }
+//
+//        for (int i = 100; i > -11; i -= 5) {
+//            System.out.printf("\t%d\n", i);
+//        }
+//
+//        for (long i = 2; i < 1000001; i *= i) {
+//            System.out.printf("\t%d\n", i);
+//        }
 
 
+        //fizzbuzz
+//
+//        for (int i = 0; i < 101; ++i) {
+//            if (i % 3 == 0) {
+//                System.out.print("Fizz");
+//                if (i % 5 == 0) {
+//                    System.out.print("Buzz");
+//                }
+//            } else if (i % 5 == 0) {
+//                System.out.print("Buzz");
+//            } else {
+//                System.out.print(i);
+//            }
+//            System.out.println();
+//        }
+//
+        String response = "";
+        int num = 0;
+        Scanner s = new Scanner(System.in);
+
+        System.out.printf("\n\n\n");
+        do {
+            System.out.print("To what number do you want to go? (max 99) ");
+            response = s.nextLine();
+            try {
+                num = Integer.parseInt(response);
+            } catch (NumberFormatException nfe) {
+                System.out.print("INVALID ENTRY: enter an integer ");
+                response = "y";
+                continue;
+            }
+            if (num > 99) {
+                System.out.print("The maximum number is 99 ");
+                response = "y";
+                continue;
+            }
+
+            // print the table
+            System.out.println("Here is your table!\n" +
+                    "\n" +
+                    "number | squared | cubed\n" +
+                    "------ | ------- | -----");
+            for (int i = 1; i <= num; i++) {
+                System.out.printf("%-6d | %-6d | %-6d\n", i, i*i, i*i*i);
+            }
+            System.out.printf("\n\n\nWould you like to print another chart? ");
+            response = s.nextLine();
+            if (response == null) break;
+            System.out.printf("\n");
+        } while (response.charAt(0) == 'y');
+        System.out.printf("\n\nGoodbye\n\n");
+        s.close();
     }
 
 
 
 
 
-    }
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
 
