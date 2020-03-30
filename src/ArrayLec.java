@@ -81,7 +81,7 @@ public class ArrayLec {
         Instructor[] team = new Instructor[FORTUNA_TEAM];
         //we now have an array with a length of three that holds instruc objs
 
-        //create instruc obj for array
+        //create instructor obj for array
         Instructor casey = new Instructor("Casey", "Friday");
         Instructor vivian = new Instructor("Vivian", "Canales");
         Instructor trant = new Instructor("Trant", "Batey");
