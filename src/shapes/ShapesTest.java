@@ -5,7 +5,9 @@ public class ShapesTest {
 
         Measurable myShape;
 
-//      myShape = new Rectangle(3,4);
+        Square mySquare = new Square(5);
+
+        Rectangle myRectangle = new Rectangle(4,3);
 
         myShape = new Square(4);
 
