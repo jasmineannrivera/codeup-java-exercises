@@ -12,13 +12,13 @@ public class AnnotationsLecture {
         child1.sayHello();
 
         //TODO TOGETHER: Call deprecated method & no comment
-
+        child1.imAMethod();
 
         //TODO TOGETHER: Call deprecated method with comment
 
 
         //TODO TOGETHER:Call sayHello without @Override
-
+        child1.sayHello();
         //TODO TOGETHER: Comment out annotation and change Parent sayHello no sayHelloParent
 
     }
@@ -26,6 +26,7 @@ public class AnnotationsLecture {
     //TODO Together: explore analyze > inspect code
     //TODO Together: Use @SuppressWarnings
     public static void doRiskyThings(){
+        @SuppressWarnings("all")
         Child riskyChild = new Child();
         riskyChild.oldMethod(); //static access & deprecation
 
