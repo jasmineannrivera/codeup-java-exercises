@@ -8,6 +8,10 @@
 # Compiled output
 *.class
 out/*
-
+src/zoopractice
 src/Human.java
 src/Earth.java
+src/Animal.java
+src/Zoo.java
+src/Fish.java
+src/Bird.java
