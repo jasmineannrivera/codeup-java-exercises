@@ -4,13 +4,7 @@ public class MethodsExercises {
     static Scanner scan = new Scanner(System.in);
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        System.out.println(add(10, 5));
-        System.out.println(subtract(10, 5));
-        System.out.println(multiply(10, 5));
-        System.out.println(division(10, 5));
-        System.out.println(modulus(10, 5));
         factorial();
-        rollDice();
 //        System.out.println(getFactorial(4));
     }
     public static double add(double a, double b) {

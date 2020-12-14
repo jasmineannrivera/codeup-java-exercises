@@ -17,11 +17,13 @@ public class ControlFlowExercises {
 
 //        Create a do-while loop that starts at 2, and displays the number squared on each line while the number is less than 1,000,000. Output should equal:
 //        Create a do-while loop that will count by 2's starting with 0 and ending at 100. Follow each number with a new line.
-//        long i = 0;
+
+
+//        long i = 2;
 //        do {
 //            System.out.printf("\t%d\n", i);
-//            i += 2;
-//        } while (i < 101);
+//            i *= i;
+//        } while (i < 1000000000);
 //        System.out.print("\n");
 
 //        Alter your loop to count backwards by 5's from 100 to -10.
@@ -62,56 +64,85 @@ public class ControlFlowExercises {
 
         //fizzbuzz
 //
-//        for (int i = 0; i < 101; ++i) {
-//            if (i % 3 == 0) {
-//                System.out.print("Fizz");
-//                if (i % 5 == 0) {
-//                    System.out.print("Buzz");
-//                }
-//            } else if (i % 5 == 0) {
-//                System.out.print("Buzz");
-//            } else {
-//                System.out.print(i);
+//        for (int i = 1; i < 101; ++i) {
+//            if ( i % 15 ==0) {
+//                System.out.println("FizzBuzz");
+//            } else if (i % 3 == 0) {
+//                System.out.println("Fizz");
 //            }
-//            System.out.println();
+//            else if (i % 5 == 0) {
+//                System.out.println("Buzz");
+//            } else {
+//                System.out.println(i);
+//            }
+//
 //        }
 //
-        String response = "";
-        int num = 0;
-        Scanner s = new Scanner(System.in);
+        // Table of powers
+        Scanner scanner = new Scanner(System.in);
+        boolean userContinues = true;
 
-        System.out.printf("\n\n\n");
         do {
-            System.out.print("To what number do you want to go? (max 99) ");
-            response = s.nextLine();
-            try {
-                num = Integer.parseInt(response);
-            } catch (NumberFormatException nfe) {
-                System.out.print("INVALID ENTRY: enter an integer ");
-                response = "y";
-                continue;
+            System.out.println("What number would you like to go up to?");
+            int userInt = scanner.nextInt();
+            System.out.println("Here is your table!");
+            System.out.println("");
+            System.out.println("number | squared | cubed");
+            System.out.println("------ | ------- | -----");
+            for(int i = 1; i <= userInt; i++) {
+                System.out.printf("%-6d", i);
+                System.out.print(" | ");
+                System.out.printf("%-7d", i * i);
+                System.out.print(" | ");
+                System.out.print(i * i * i);
+                System.out.println();
             }
-            if (num > 99) {
-                System.out.print("The maximum number is 99 ");
-                response = "y";
-                continue;
+            System.out.println("Would you like to enter another number (y/n)?");
+            String userResponse = scanner.next();
+            if(!userResponse.equalsIgnoreCase("y")) {
+                userContinues = false;
             }
+        } while (userContinues);
+        System.out.println("goodbye!");
 
-            // print the table
-            System.out.println("Here is your table!\n" +
-                    "\n" +
-                    "number | squared | cubed\n" +
-                    "------ | ------- | -----");
-            for (int i = 1; i <= num; i++) {
-                System.out.printf("%-6d | %-6d | %-6d\n", i, i*i, i*i*i);
-            }
-            System.out.printf("\n\n\nWould you like to print another chart? ");
-            response = s.nextLine();
-            if (response == null) break;
-            System.out.printf("\n");
-        } while (response.charAt(0) == 'y');
-        System.out.printf("\n\nGoodbye\n\n");
-        s.close();
+
+
+//
+//        Scanner scanner = new Scanner(System.in);
+//        boolean userContinues = true;
+//
+//        do {
+//            System.out.print("Please enter a numerical grade from 0 to 100 ");
+//
+//            int numericGrade = scanner.nextInt();
+//
+//            /*
+//            A : 100 - 88
+//            B : 87 - 80
+//            C : 79 - 67
+//            D : 66 - 60
+//            F : 59 - 0
+//             */
+//            if(numericGrade >= 88) {
+//                System.out.println("A");
+//            } else if (numericGrade >= 80) {
+//                System.out.println("B");
+//            } else if (numericGrade >= 67) {
+//                System.out.println("C");
+//            } else if (numericGrade >= 60) {
+//                System.out.println("D");
+//            } else {
+//                System.out.println("F");
+//            }
+//
+//            System.out.println("Would you like to enter another grade (y/n)?");
+//            String userResponse = scanner.next();
+//            if(!userResponse.equalsIgnoreCase("y")) {
+//                userContinues = false;
+//            }
+//        } while(userContinues);
+
+
     }
 
 
